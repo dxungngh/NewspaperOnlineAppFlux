@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/holder_category_layout"
+                                    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/holder_category_height">
+
+    <ImageView
+        android:id="@+id/holder_category_main_image"
+        style="@style/Image.Category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/holder_category_title"
+        style="@style/Title.Category"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/holder_category_title_height"/>
+
+</android.support.v7.widget.CardView>

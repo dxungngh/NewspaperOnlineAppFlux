@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:title">@string/app_name</item>
+        <item name="android:editTextColor">@android:color/background_dark</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- category -->
+    <style name="Category"/>
+
+    <style name="Image.Category" parent="Category">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@mipmap/ic_placeholder</item>
+    </style>
+
+    <style name="Title.Category" parent="Category">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/holder_category_title_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:background">@color/halfBlack</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- news list -->
+    <style name="NewsList"/>
+
+    <style name="CardView.NewsList" parent="NewsList">
+        <item name="android:layout_marginLeft">@dimen/holder_news_card_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/holder_news_card_view_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/holder_news_card_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/holder_news_card_view_margin_bottom</item>
+    </style>
+
+    <style name="Image.NewsList" parent="NewsList">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@mipmap/ic_placeholder</item>
+        <item name="android:layout_marginLeft">@dimen/holder_news_image_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/holder_news_image_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/holder_news_image_margin_bottom</item>
+        <item name="android:layout_marginRight">@dimen/holder_news_image_margin_right</item>
+    </style>
+
+    <style name="Title.NewsList" parent="NewsList">
+        <item name="android:layout_marginRight">@dimen/holder_news_title_margin_right</item>
+        <item name="android:textSize">@dimen/holder_news_title_text_size</item>
+    </style>
+
+</resources>

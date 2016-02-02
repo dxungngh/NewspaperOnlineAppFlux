@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NewsPaper Online</string>
+
+    <!-- error -->
+    <string name="error_internet">Can not connect to server. Please check your internet connection.</string>
+</resources>
