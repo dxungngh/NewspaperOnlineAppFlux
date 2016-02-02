@@ -8,13 +8,13 @@ import com.daniel.flux.newspaper.R;
 import com.daniel.flux.newspaper.store.NewsStoreChangeEvent;
 import com.squareup.otto.Subscribe;
 
-public class MainActivity extends BaseActivity {
-    private static final String TAG = MainActivity.class.getSimpleName();
+public class LauncherActivity extends BaseActivity {
+    private static final String TAG = LauncherActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_main);
+        this.setContentView(R.layout.activity_launcher);
     }
 
     @Override
@@ -33,19 +33,15 @@ public class MainActivity extends BaseActivity {
     }
 
     @Subscribe
-    public void onHomeStoreChange(NewsStoreChangeEvent event) {
+    public void onCategoriesListChange(NewsStoreChangeEvent event) {
         if (TextUtils.isEmpty(event.getError())) {
-            this.goToHomeActivity();
+            Intent intent = new Intent(this, CategoryActivity.class);
+            super.startActivity(intent);
             super.finish();
         }
     }
 
     private void fetchCategoriesOfServer() {
         super.mainActivityActionCreator.fetchCategoriesOfServer();
-    }
-
-    private void goToHomeActivity() {
-        Intent intent = new Intent(this, CategoryActivity.class);
-        super.startActivity(intent);
     }
 }
