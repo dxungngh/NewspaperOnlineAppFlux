@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 import com.daniel.flux.newspaper.action.CategoryActivityActionCreator;
-import com.daniel.flux.newspaper.action.MainActivityActionCreator;
 import com.daniel.flux.newspaper.action.NewsDetailActivityActionCreator;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
 import com.daniel.flux.newspaper.store.NewsStore;
@@ -26,7 +25,6 @@ public class ApplicationModule {
     private final Bus bus;
     private final Dispatcher dispatcher;
 
-    private final MainActivityActionCreator mainActivityActionCreator;
     private final CategoryActivityActionCreator categoryActivityActionCreator;
     private final NewsDetailActivityActionCreator newsDetailActivityActionCreator;
 
@@ -37,7 +35,6 @@ public class ApplicationModule {
         this.bus = new Bus();
         this.dispatcher = new Dispatcher(this.bus);
 
-        this.mainActivityActionCreator = new MainActivityActionCreator(this.application, this.dispatcher);
         this.categoryActivityActionCreator = new CategoryActivityActionCreator(this.application, this.dispatcher);
         this.newsDetailActivityActionCreator = new NewsDetailActivityActionCreator(this.application, this.dispatcher);
 
@@ -72,12 +69,6 @@ public class ApplicationModule {
     @Singleton
     Dispatcher provideDispatcher() {
         return this.dispatcher;
-    }
-
-    @Provides
-    @Singleton
-    MainActivityActionCreator provideMainActionCreator() {
-        return this.mainActivityActionCreator;
     }
 
     @Provides

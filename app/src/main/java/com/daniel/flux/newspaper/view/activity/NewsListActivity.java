@@ -61,7 +61,7 @@ public class NewsListActivity extends BaseActivity {
     private void getNewsList() {
         super.showLoadingDialog(this);
         News currentCategory = super.newsStore.getCurrentCategory();
-        super.categoryActivityActionCreator.getNewsListOfType(currentCategory.getListType(),
+        super.categoryActivityActionCreator.fetchNewsesListOfCategory(currentCategory.getListType(),
             currentCategory.getListId());
     }
 

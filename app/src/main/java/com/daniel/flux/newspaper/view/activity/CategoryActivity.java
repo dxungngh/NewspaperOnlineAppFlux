@@ -20,7 +20,7 @@ public class CategoryActivity extends BaseActivity {
     private static final String TAG = CategoryActivity.class.getSimpleName();
 
     @Bind(R.id.category_refresh_layout)
-    MaterialRefreshLayout categoryRefreshLayout;
+    protected MaterialRefreshLayout categoryRefreshLayout;
     @Bind(R.id.category_recycler_view)
     protected RecyclerView categoryRecyclerView;
 
@@ -82,7 +82,7 @@ public class CategoryActivity extends BaseActivity {
         this.categoryRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
-                CategoryActivity.super.mainActivityActionCreator.fetchCategoriesOfServer();
+                CategoryActivity.super.categoryActivityActionCreator.fetchCategoriesOfServer();
             }
         });
     }

@@ -7,7 +7,7 @@ import com.daniel.flux.newspaper.action.base.ActionCreator;
 import com.daniel.flux.newspaper.action.base.ActionType;
 import com.daniel.flux.newspaper.action.base.DataBundle;
 import com.daniel.flux.newspaper.action.base.MyAction;
-import com.daniel.flux.newspaper.callback.OnGetNewsDetailListener;
+import com.daniel.flux.newspaper.callback.OnFetchNewsDetailListener;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
 import com.daniel.flux.newspaper.model.News;
 
@@ -22,7 +22,7 @@ public class NewsDetailActivityActionCreator extends ActionCreator {
     }
 
     public void getNewsDetail(News news) {
-        this.newsApiAdapter.fetchNewsDetail(news.getContentId(), new OnGetNewsDetailListener() {
+        this.newsApiAdapter.fetchNewsDetail(news.getContentId(), new OnFetchNewsDetailListener() {
             @Override
             public void onSuccess(String result) {
                 NewsDetailActivityActionCreator.this.onGetNewsListOfCategorySuccessfully(result);

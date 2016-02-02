@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 
 import com.daniel.flux.newspaper.action.CategoryActivityActionCreator;
-import com.daniel.flux.newspaper.action.MainActivityActionCreator;
 import com.daniel.flux.newspaper.action.NewsDetailActivityActionCreator;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
 import com.daniel.flux.newspaper.store.NewsStore;
@@ -52,8 +51,6 @@ public interface ApplicationComponent {
     Bus provideBus();
 
     Dispatcher provideDispatcher();
-
-    MainActivityActionCreator provideMainActionCreator();
 
     CategoryActivityActionCreator provideCategoryActivityActionCreator();
 

@@ -42,6 +42,6 @@ public class LauncherActivity extends BaseActivity {
     }
 
     private void fetchCategoriesOfServer() {
-        super.mainActivityActionCreator.fetchCategoriesOfServer();
+        super.categoryActivityActionCreator.fetchCategoriesOfServer();
     }
 }

@@ -9,7 +9,6 @@ import android.util.Log;
 
 import com.daniel.flux.newspaper.R;
 import com.daniel.flux.newspaper.action.CategoryActivityActionCreator;
-import com.daniel.flux.newspaper.action.MainActivityActionCreator;
 import com.daniel.flux.newspaper.action.NewsDetailActivityActionCreator;
 import com.daniel.flux.newspaper.application.ApplicationComponent;
 import com.daniel.flux.newspaper.application.MyApplication;
@@ -32,8 +31,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Bus bus;
     @Inject
     protected Dispatcher dispatcher;
-    @Inject
-    protected MainActivityActionCreator mainActivityActionCreator;
     @Inject
     protected CategoryActivityActionCreator categoryActivityActionCreator;
     @Inject

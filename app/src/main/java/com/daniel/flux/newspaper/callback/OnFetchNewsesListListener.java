@@ -8,5 +8,5 @@ import com.daniel.flux.newspaper.model.News;
 
 import java.util.List;
 
-public interface OnGetNewsListListener extends GenericListener<List<News>> {
+public interface OnFetchNewsesListListener extends GenericListener<List<News>> {
 }
