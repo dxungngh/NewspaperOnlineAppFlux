@@ -40,13 +40,4 @@ public class NewsDataSource {
             return null;
         }
     }
-
-    public void updateContent(News news) {
-        try {
-            DatabaseHelper helper = DatabaseManager.getInstance(context).getHelper();
-            helper.getNewsDao().update(news);
-        } catch (Exception e) {
-            Log.e(TAG, "updateContent", e);
-        }
-    }
 }
