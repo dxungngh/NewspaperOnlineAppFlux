@@ -9,7 +9,7 @@ import com.daniel.flux.newspaper.action.base.DataBundle;
 import com.daniel.flux.newspaper.action.base.MyAction;
 import com.daniel.flux.newspaper.callback.OnFetchNewsDetailListener;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 
 /**
  * Created by danielnguyen on 1/13/16.

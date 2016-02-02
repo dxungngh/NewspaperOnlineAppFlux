@@ -7,7 +7,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.daniel.flux.newspaper.callback.OnFetchNewsDetailListener;
 import com.daniel.flux.newspaper.callback.OnFetchNewsesListListener;
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 import com.daniel.flux.newspaper.network.volley.MyRequest;
 
 import java.util.List;

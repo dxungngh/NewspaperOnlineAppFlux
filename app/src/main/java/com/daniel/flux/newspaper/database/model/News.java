@@ -1,37 +1,114 @@
-package com.daniel.flux.newspaper.model;
+package com.daniel.flux.newspaper.database.model;
 
 import android.text.TextUtils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
 public class News implements Serializable {
     private static final String TAG = News.class.getSimpleName();
 
+    public static class Fields {
+        public static final String ID = "id";
+        public static final String CONTENT = "content";
+        public static final String CONTENT_ID = "content_id";
+        public static final String SOURCE_ID = "source_id";
+        public static final String SOURCE_NAME = "source_name";
+        public static final String ZONE_ID = "zone_id";
+        public static final String ZONE_NAME = "zone_name";
+        public static final String BAO_MOI_URL = "bao_moi_url";
+        public static final String CONTENT_URL = "content_url";
+        public static final String TITLE = "title";
+        public static final String DESCRIPTION = "description";
+        public static final String SHORT_BODY = "short_body";
+        public static final String HAS_IMAGE = "has_image";
+        public static final String PORTRAIT_AVATAR = "portrait_avatar";
+        public static final String PORTRAIT_AVATAR_WIDTH = "portrait_avatar_width";
+        public static final String PORTRAIT_AVATAR_HEIGHT = "portrait_avatar_height";
+        public static final String LANDSCAPE_AVATAR = "landscape_avatar";
+        public static final String LANDSCAPE_AVATAR_WIDTH = "landscape_avatar_width";
+        public static final String LANDSCAPE_AVATAR_HEIGHT = "landscape_avatar_height";
+        public static final String IMAGES = "images";
+        public static final String LIST_ID = "list_id";
+        public static final String LIST_NAME = "list_name";
+        public static final String LIST_TYPE = "zone";
+        public static final String COMMENTS = "comments";
+        public static final String DATE = "date";
+    }
+
+    @DatabaseField(allowGeneratedIdInsert = true, canBeNull = false, columnName = Fields.ID,
+        generatedId = true)
     private long id;
+
+    @DatabaseField(columnName = Fields.CONTENT_ID)
     private long contentId;
+
+    @DatabaseField(columnName = Fields.SOURCE_ID)
     private long sourceId;
+
+    @DatabaseField(columnName = Fields.SOURCE_NAME)
     private String sourceName;
+
+    @DatabaseField(columnName = Fields.ZONE_ID)
     private long zoneId;
+
+    @DatabaseField(columnName = Fields.ZONE_NAME)
     private String zoneName;
+
+    @DatabaseField(columnName = Fields.BAO_MOI_URL)
     private String baomoiUrl;
+
+    @DatabaseField(columnName = Fields.CONTENT_URL)
     private String contentUrl;
+
+    @DatabaseField(columnName = Fields.TITLE)
     private String title;
+
+    @DatabaseField(columnName = Fields.DESCRIPTION)
     private String description;
+
+    @DatabaseField(columnName = Fields.SHORT_BODY)
     private String shortBody;
+
+    @DatabaseField(columnName = Fields.HAS_IMAGE)
     private int hasImage;
+
+    @DatabaseField(columnName = Fields.PORTRAIT_AVATAR)
     private String portraitAvatar;
+
+    @DatabaseField(columnName = Fields.PORTRAIT_AVATAR_WIDTH)
     private int portraitAvatarWidth;
+
+    @DatabaseField(columnName = Fields.PORTRAIT_AVATAR_HEIGHT)
     private int portraitAvatarHeight;
+
+    @DatabaseField(columnName = Fields.LANDSCAPE_AVATAR)
     private String landscapeAvatar;
+
+    @DatabaseField(columnName = Fields.LANDSCAPE_AVATAR_WIDTH)
     private int landscapeAvatarWidth;
+
+    @DatabaseField(columnName = Fields.LANDSCAPE_AVATAR_HEIGHT)
     private int landscapeAvatarHeight;
+
+    @DatabaseField(columnName = Fields.IMAGES)
     private String images;
+
+    @DatabaseField(columnName = Fields.LIST_ID)
     private int listId;
+
+    @DatabaseField(columnName = Fields.LIST_NAME)
     private String listName;
+
+    @DatabaseField(columnName = Fields.LIST_TYPE)
     private String listType;
+
+    @DatabaseField(columnName = Fields.DATE)
     private long date;
+
+    @DatabaseField(columnName = Fields.CONTENT)
     private String content;
 
     public long getId() {
@@ -275,6 +352,13 @@ public class News implements Serializable {
             return this.landscapeAvatar;
         }
         return this.portraitAvatar;
+    }
+
+    public boolean isValid() {
+        if (!TextUtils.isEmpty(this.content)) {
+            return true;
+        }
+        return false;
     }
 
     @Override

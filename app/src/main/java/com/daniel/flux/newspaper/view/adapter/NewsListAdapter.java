@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.daniel.flux.newspaper.R;
 import com.daniel.flux.newspaper.application.MyApplication;
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 import com.daniel.flux.newspaper.store.NewsStore;
 import com.daniel.flux.newspaper.view.activity.NewsDetailActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;

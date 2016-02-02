@@ -1,6 +1,6 @@
 package com.daniel.flux.newspaper.network.parser;
 
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

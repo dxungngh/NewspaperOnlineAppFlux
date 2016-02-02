@@ -7,7 +7,7 @@ import android.text.TextUtils;
 
 import com.daniel.flux.newspaper.R;
 import com.daniel.flux.newspaper.application.MyApplication;
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 import com.daniel.flux.newspaper.store.NewsStoreChangeEvent;
 import com.daniel.flux.newspaper.view.adapter.NewsListAdapter;
 import com.squareup.otto.Subscribe;

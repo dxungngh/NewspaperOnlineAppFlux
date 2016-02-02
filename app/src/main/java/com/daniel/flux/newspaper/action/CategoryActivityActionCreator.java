@@ -10,7 +10,7 @@ import com.daniel.flux.newspaper.action.base.MyAction;
 import com.daniel.flux.newspaper.callback.OnFetchNewsesListListener;
 import com.daniel.flux.newspaper.config.NewsConfig;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
-import com.daniel.flux.newspaper.model.News;
+import com.daniel.flux.newspaper.database.model.News;
 
 import java.util.List;
 

@@ -6,8 +6,8 @@ import android.util.Log;
 import com.daniel.flux.newspaper.R;
 import com.daniel.flux.newspaper.action.base.DataBundle;
 import com.daniel.flux.newspaper.action.base.MyAction;
+import com.daniel.flux.newspaper.database.model.News;
 import com.daniel.flux.newspaper.dispatcher.Dispatcher;
-import com.daniel.flux.newspaper.model.News;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
@@ -49,7 +49,12 @@ public class NewsStore extends AbstractStore {
     }
 
     public void setCurrentNews(News currentNews) {
-        this.currentNews = currentNews;
+        News newsOfDatabase = super.newsDataSource.getNewsByContentId(currentNews.getContentId());
+        if (newsOfDatabase != null) {
+            this.currentNews = newsOfDatabase;
+        } else {
+            this.currentNews = currentNews;
+        }
     }
 
     @Subscribe
@@ -110,8 +115,8 @@ public class NewsStore extends AbstractStore {
     private void onGetNewsDetailSuccessfully(DataBundle data) {
         String content = (String) data.get(MyAction.MyDataKey.NEWS_CONTENT);
         content = this.formatContent(this.currentNews.getTitle(), content);
-        Log.i(TAG, content);
         this.currentNews.setContent(content);
+        super.newsDataSource.createNews(this.currentNews);
         super.emitStoreChange(new NewsStoreChangeEvent(null));
     }
 

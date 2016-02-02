@@ -33,7 +33,7 @@ public class NewsDetailActivity extends BaseActivity {
         super.dispatcher.register(this);
         super.dispatcher.register(super.newsStore);
 
-        this.getNewsContent();
+        this.checkNewsContent();
     }
 
     @Override
@@ -50,6 +50,14 @@ public class NewsDetailActivity extends BaseActivity {
             this.drawNewsContent();
         } else {
             super.showError(event.getError());
+        }
+    }
+
+    private void checkNewsContent() {
+        if (super.newsStore.getCurrentNews().isValid()) {
+            this.drawNewsContent();
+        } else {
+            this.getNewsContent();
         }
     }
 
